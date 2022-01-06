@@ -1,5 +1,4 @@
-FROM grafana/grafana
+FROM grafana/grafana-oss
 ENV GF_INSTALL_PLUGINS grafana-piechart-panel
-ADD heroku-run.sh /
-ADD grafana.ini /etc/grafana/grafana.ini
+COPY . .
 ENTRYPOINT [ "/heroku-run.sh" ]
